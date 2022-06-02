@@ -190,18 +190,34 @@ ul {
 .search-map {
     display: flex;
     justify-content: flex-end;
-    margin-right: 200px;
+    margin-right: 180px;
+    margin-left: 1020px;
+    height: 40px;
+    padding: 0px;
+    border: 1px solid #333;
+    border-radius: 4px;
 }
 
 .search-map-1 {
-    height: 24px;
-    padding: 12px;
+    width: 380px;
+    height: 38px;
+    padding: 14px;
     border: 0;
     border-radius: 0;
+    position: absolute;
 }
 
 .but {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border: 0;
     position: absolute;
+    margin: 5px;
+    cursor: pointer;
+}
+.but:hover {
+    background-color: #7cd5d5;
 }
 
 .body {
