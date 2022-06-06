@@ -225,6 +225,8 @@ ul {
     flex-direction: row;
     margin-left: 50px;
     justify-content: flex-start;
+    position: relative;
+    top: 80px;
 }
 
 .sidebar {
@@ -281,6 +283,9 @@ ul {
     font-size: 30px;
     color: white;
     background-size: cover;
+}
+.main a {
+    color: #fff;
 }
 
 .first {
