@@ -225,6 +225,8 @@ ul {
     flex-direction: row;
     margin-left: 50px;
     justify-content: flex-start;
+    position: relative;
+    top: 80px;
 }
 
 .sidebar {
@@ -282,6 +284,9 @@ ul {
     color: white;
     background-size: cover;
 }
+.main a {
+    color: #fff;
+}
 
 .first {
     background-image: url('https://dulichkhampha24.com/wp-content/uploads/2019/08/nen-du-lich-sapa-may-ngay-4.jpg');
@@ -318,3 +323,4 @@ ul {
 .nineth {
     background-image: url('https://www.limo24h.vn/wp-content/uploads/2020/02/vi-sao-nen-du-lich-phu-quoc.jpg');
 } 
+
