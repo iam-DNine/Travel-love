@@ -220,6 +220,14 @@ ul {
     background-color: #7cd5d5;
 }
 
+.banner img {
+    width: 100%;
+    height: 80vh;
+}
+.text-white {
+    color: #fff !important;
+}
+
 .body {
     display: flex;
     flex-direction: row;
@@ -254,7 +262,8 @@ ul {
 }
 
 .two {
-    background-image: url('http://reviewdulich365.com/wp-content/uploads/2019/03/toppas-eco.jpg');
+    background-image: url('https://elitetour.com.vn/files/images/Blogs/Combo-Intercontinental-Phu-Quoc.jpg');
+    background-position-x: -130px;
 
 }
 
@@ -322,4 +331,32 @@ ul {
 
 .nineth {
     background-image: url('https://www.limo24h.vn/wp-content/uploads/2020/02/vi-sao-nen-du-lich-phu-quoc.jpg');
+}
+
+
+footer {
+    background-image: linear-gradient(80deg, #9C27B0, #ff8c8c);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 13px;
+    margin-top: 50px;
+    padding: 50px 0px 30px;
+    color: #fff;
+    display: block;
+    position: relative;
+    top: 32px;
+}
+footer .frame_l {
+    width: 37%;
+    float: left;
+}
+footer .frame_l .company_name {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.email {
+    cursor: pointer;
 }
