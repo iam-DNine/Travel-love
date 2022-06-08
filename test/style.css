@@ -359,3 +359,30 @@ ul {
     background-image: url('https://www.limo24h.vn/wp-content/uploads/2020/02/vi-sao-nen-du-lich-phu-quoc.jpg');
 } 
 
+footer {
+    background-image: linear-gradient(80deg, #9C27B0, #ff8c8c);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 13px;
+    margin-top: 50px;
+    padding: 50px 0px 30px;
+    color: #fff;
+    display: block;
+    position: relative;
+    top: 32px;
+}
+footer .frame_l {
+    width: 37%;
+    float: left;
+}
+footer .frame_l .company_name {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.email {
+    cursor: pointer;
+}
+
