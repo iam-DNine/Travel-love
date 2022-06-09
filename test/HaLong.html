@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hạ Long</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: sans-serif "roboto";
+            font-size: 24px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            color: #fff;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Modal Content */
+        .modal-content {
+            margin: auto;
+            padding: 0px;
+            border: 1px solid #888;
+            width: 25%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #signup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #form-signup {
+            background: rgba(17, 50, 42, 0.627);
+            max-width: 400px;
+            flex-grow: 1;
+            padding: 30px 30px 40px 30px;
+            border: 1px solid rgba(255, 0, 0, 0.8);
+            border-radius: 8px;
+        }
+
+        #eye-1 {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 0;
+            padding-right: 0;
+            margin-right: 18px;
+            cursor: pointer;
+        }
+
+        #login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #form-login {
+            background: rgba(17, 50, 42, 0.627);
+            max-width: 400px;
+            flex-grow: 1;
+            padding: 30px 30px 40px 30px;
+            border: 1px solid rgba(255, 0, 0, 0.8);
+            border-radius: 8px;
+        }
+
+        .form-head {
+            text-align: center;
+            margin: 24px;
+            color: #16a085;
+        }
+
+        .login-1 {
+            margin: 14px 0px 18px;
+            border-bottom: 1px solid #fff;
+            display: flex;
+        }
+
+        .login-1 i {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        #eye {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 0;
+            padding-right: 0;
+            margin-right: 18px;
+            cursor: pointer;
+        }
+
+        .eml {
+            background: transparent;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            flex-grow: 2;
+        }
+
+        .form-submit {
+            background: transparent;
+            width: 100%;
+            margin: 24px 0px 24px 0px;
+            border: 1px solid #fff;
+            padding: 10px 0px 10px;
+            color: #fff;
+        }
+
+        .signup {
+            font-size: 18px;
+            text-decoration: none;
+            margin-right: 24px;
+            color: #3498db;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0px 10px 0px 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 1px solid #c1c1c1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+        }
+
+        .logo a img {
+            width: 220px;
+            height: 50px;
+        }
+
+        .menu-sub {
+            display: flex;
+            justify-content: flex-end;
+            width: 800px;
+            flex-direction: row;
+        }
+
+        .menu-1 {
+            margin: 0 32px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .sg-lg {
+            background-color: #7cd5d5;
+        }
+
+        .sg-lg:hover {
+            background-color: #ffcdcd;
+        }
+
+
+        .but:hover {
+            background-color: #7cd5d5;
+        }
+
+
+        .head {
+            display: flex;
+            justify-content: center;
+            color: #eb2f06;
+            margin: 80px 0px 100px 0px;
+        }
+
+        .imgdautien {
+            text-align: center;
+        }
+
+        .img-0 img {
+            height: 50vh;
+            width: 100%;
+        }
+
+        .content {
+            margin: 0px 200px 50px 200px;
+            padding: 0px 100px;
+        }
+
+        .item {
+            color: #079992;
+        }
+
+        .uli-1 {
+            color: #b71540;
+            margin-left: 60px;
+        }
+
+        .img-1 {
+            text-align: center;
+        }
+
+        .ftc {
+            background-image: linear-gradient(80deg, #9C27B0, #ff8c8c);
+            width: 100%;
+            height: 20vh;
+        }
+
+        .share {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 24px;
+            position: relative;
+            top: 30px;
+            cursor: pointer;
+        }
+
+        .ftc-1 {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+
+        .but {
+            margin: 30px 0px 0px 230px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div id="modal-content" class="modal-content">
+            <span class="close">&times;</span>
+        </div>
+
+    </div>
+    <header class="container">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./img/logo1.png" alt="#logo">
+            </a>
+        </div>
+        <div>
+            <nav class="menu">
+                <ul class="menu-sub">
+                    <li class="menu-1">
+                        <a href="#">Blog</a>
+
+                    </li>
+                    <li class="menu-1"><a href="#">Review</a></li>
+                    <li class="menu-1"><a href="https://www.ivivu.com/">Booking</a></li>
+                    <li id="signupForm" class="sg-lg menu-1">Signup</li>
+                    <li id="loginBtn" class="sg-lg menu-1">Login</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="animation">
+        <div class="img-0">
+            <img src="https://cdn3.ivivu.com/2014/10/du-lich-sa-pa-cam-nang-tu-a-den-z-iVIVU.com-30-1024x425.jpg"
+                alt="">
+        </div>
+    </div>
+    <h1 class="head">Review chuyến đi Hạ Long 5 ngày 4 đêm chỉ 1.900.000Đ</h1>
+    <div class="content">
+        <p>Nhiều người cho rằng Hạ Long là một điểm du lịch sang chảnh và sẽ mất khá nhiều chi phí. Nhưng với chuyến đi
+            Hạ Long 5 ngày 4 đêm của bạn Bùi Ly vừa rồi, bạn sẽ phải bất ngờ vì chi phí chưa đến 2 triệu đồng mà còn
+            được du hí khắp nơi. Thử xem chi tiết chuyến hành trình của bạn ấy nhé!
+        </p>
+        <div class="imgdautien">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-24.jpg"
+                alt="Bùi Ly">
+        </div>
+        <h3 class="item">Đặt khách sạn</h3>
+        <p>Để chuẩn bị cho chuyến đi Hạ Long, việc cần làm đầu tiên đó chính là đặt khách sạn. Bạn Bùi Ly chia sẻ:
+            “Thành phố Hạ Long chia làm 2 khu được kết nối với nhau bởi cầu Bãi Cháy, một bên là phường Hòn Gai trung
+            tâm
+            kinh tế của thành phố, bên này ít phòng và phòng giá cao. Một bên là phường Bãi Cháy, bên này mới phát
+            triển,
+            tập trung nhiều khách du lịch và phòng khách sạn rẻ, đặc biệt gần khu Sun World. Các bạn nên ưu tiên đặt
+            phòng
+            bên phường Bãi cháy để thuận tiện vui chơi, ăn uống”. </p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-38.jpg"
+                alt="Thùy Dương hotel">
+            <p style="color:#eb0000b0;font-weight:bold">Khách sạn vừa có Pub vừa có quán ăn cho Tây.</p>
+        </div>
+        <p>Và dĩ nhiên, bạn Bùi Ly đã đặt một phòng khang trang ở khách sạn Hạ Long Bay View (trước đây là Thùy Dương
+            Hotel)
+            với giá 220.000Đ/phòng/ngày. Giá phòng đã bao gồm một bữa ăn sáng rồi nhé, các phòng ở khách sạn này đều có
+            view
+            đẹp và đặc biệt là mỗi phòng đều được trang trí rất đẹp mắt, tiện nghi. Ngoài ra, còn có rất nhiều khách sạn
+            Hạ
+            Long khang trang, giá khá ổn, nếu bạn nào thích cảm giác ở homestay cũng có thể lựa chọn. Ở Hạ Long thời
+            gian
+            gần đây cũng được đầu tư khá nhiều homestay xinh xắn, giá khá mềm.</p>
+        <h3 class="item">Phương tiện di chuyển</h3>
+        <p>Một chuyến xe an toàn sẽ giúp cho chuyến du lịch của bạn trọn vẹn và ý nghĩa hơn. Qua tìm hiểu kinh nghiệm du
+            lịch
+            Hạ Long cũng như các thông tin về các nhà xe, bạn Bùi Ly đã chọn nhà xe Hoàng Công, một nhà xe uy tín và
+            phục vụ
+            tốt nhất trên tuyến đường Hà Nội - Hạ Long. Cứ khoảng 60 phút là có một chuyến xe và giá vé chỉ có
+            130.000Đ/người
+            nhà xe còn đưa rước tận nơi, bạn không cần phải lo về việc trung chuyển.</p>
+        <h3 class="item">Thuê xe ở Hạ Long</h3>
+        <p>Một điểm trừ cho Hạ Long đó chính là các dịch vụ thuê xe máy. Các dịch vụ thuê xe máy ở Hạ Long cũng không
+            nhiều, còn
+            ở khách sạn thì chủ yếu là xe đời cũ. Bạn Bùi Ly cũng chia sẻ, vì khách đi Hạ Long chủ yếu đi theo tour nên
+            các dịch
+            vụ thuê xe máy hơi khan hiếm và không được tốt như các điểm tham quan khác. Cũng may mắn là bạn Bùi Ly cũng
+            thuê
+            được một chiếc Nouvo đời cũ để vi vu khắp nơi ở Hạ Long.</p>
+        <div class="img2" style="text-align: center;"><img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-19.jpg" alt="Bến tàu vịnh Hạ Long">
+        <p style="color:#eb0000b0;font-weight:bold">Cảnh đẹp ở bến tàu vịnh Hạ Long.</p>
+        </div>
+        <h3 class="item">Du lịch Hạ Long ăn gì vừa ngon vừa tiết kiệm?</h3>
+        <p>Ở Hạ Long chủ yếu là các nhà hàng lớn và món ăn nổi tiếng nhất vẫn là hải sản và cũng có không ít quán ăn dành
+             cho các đoàn khách. Để tiết kiệm chi phí, bạn Bùi Ly đã chọn một số quán ăn trên đường Vườn Đào (gần khách sạn
+              Hạ Long Bay View). Các quán ăn ở đây bán đầy đủ những món ăn bình dân, cơm, phở, sốt vang, mì… khách du lịch
+               có thể thoải mái lựa chọn. Ngoài ra, khu phố đi bộ trước cổng Sun World cũng là một thiên đường ăn uống, với
+                các món ăn vặt ngon - bổ - rẻ.</p>
+        <h3 class="item">Lịch trình 5 ngày 4 đêm ăn chơi thả ga ở Hạ Long</h3>
+        <h4>Ngày 1: Thẳng tiến Hạ Long</h4>
+        <p>Xuất phát từ Hà Nội, bạn Bùi Ly đón xe khách đi Hạ Long, xe đi theo đường cao tốc, xuất bến lúc 14h và chưa đến
+             17h là đến nơi. Ly về khách sạn cất hành lý, nghỉ ngơi rồi ra cầu Bãi Cháy chụp ảnh, check-in Hạ Long về đêm,
+              ăn uống rồi về lại khách sạn nghỉ ngơi.</p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-1.jpg" alt="hihi">
+            <p style="color:#eb0000b0;font-weight:bold">Check-in cầu Bãi Cháy về đêm.</p>
+        </div>
+        <h4>Ngày 2: Lang thang Hạ Long</h4>
+        <p>Bùi Ly dùng bữa sáng tại khách sạn lúc 7h sáng và bắt đầu hành trình khám phá thành phố Hạ Long. Bảo tàng Quảng
+             Ninh và thư viện nằm cạnh nhau vì thế bạn Bùi Ly đã kết hợp tham quan 2 nơi này luôn. Ăn trưa ở gần khách sạn
+              được cho là “chuẩn” nhất, như đã giới thiệu ở trên, ở đây có nhiều món ăn, tha hồ lựa chọn. </p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-2.jpg" alt="Bữa sáng">
+            <p style="color:#eb0000b0;font-weight:bold">Bữa sáng giản dị ở khách sạn.</p>
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-3.jpg" alt="Bảo tàng">
+            <p style="color:#eb0000b0;font-weight:bold">Bảo tàng Quảng Ninh.</p>
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-4.jpg" alt="Thư viện">
+            <p style="color:#eb0000b0;font-weight:bold">Thư viện Quảng Ninh.</p>
+        </div>
+        <p>Buổi chiều, cáp treo nữ hoàng và khu đồi huyền bí là 2 điểm đến được bạn Ly lựa chọn.</p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-7.jpg" alt="Cáp treo">
+            <p style="color:#eb0000b0;font-weight:bold">Cáp treo Nữ Hoàng - Tha hồ ngắm biển luôn nha.</p>
+        </div>
+        <p><span style="color: rgb(173, 150, 16)">>>> Lưu ý:</span>Có nhiều bạn không biết cứ tưởng Sun World Hạ Long giống như Vinperland hay Bà Nà Hills, mua vé 1 lần là
+             vào chơi hết trong ngày. Thật ra, ở đây có combo 3 công viên: công viên nước + cáp treo nữ hoàng + công viên rồng
+              với giá là 500.000Đ/người, nhưng nếu mua riêng thì 1 công viên sẽ có giá là 350.000Đ/1 vé. Nhiều bạn nhìn thấy giá
+               này sẽ chọn mua combo vì cho rằng giá rẻ hơn lại được tham quan cả 3 công viên. Nhưng nếu bạn chịu chơi ở đây từ
+                sáng đến tối thì hãy chọn combo, còn nếu có ít thời gian chỉ nên mua vé ở 1 công viên thôi nhé!</p>
+        <b>* Giờ mở cửa:</b>
+        <p>+ Từ thứ 2 đến thứ 6:14h00 chiều đến tối</p>
+        <p>+ Thứ 7, chủ nhật: 9h00 sáng đến tối</p>
+        <p>Bùi Ly tham quan và dạo chơi ở Sun World đến 7h tối rồi quay trở lại khách sạn, ăn tối, sau đó về phòng nghỉ ngơi.</p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-34.jpg" alt="Công viên">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-37.jpg" alt="Công viên">
+            <p style="color:#eb0000b0;font-weight:bold">Sun World Hạ Long khá rộng và có nhiều khu ấn tượng, tha hồ sống ảo.</p>
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-9.jpg" alt="Sống ảo">
+            <p style="color:#eb0000b0;font-weight:bold">Hoàng hôn Hạ Long đẹp tuyệt vời.</p>
+        </div>
+        <h4>Ngày 3: Chiêm ngưỡng vịnh Hạ Long - Kỳ quan thiên nhiên thế giới</h4>
+        <p>Sẽ không thể nào thiếu một chuyến ngồi du thuyền chiêm ngưỡng một trong những kỳ quan thiên nhiên thế giới Vịnh Hạ
+             Long trong chuyến đi Hạ Long. Để mua vé du thuyền vịnh Hạ Long, khách đi tour du lịch Hạ Long phải ra đảo Tuần
+              Châu mua vé. Từ cầu Bãi Cháy ra đến vịnh Hạ Long khoảng 14km, vì thế, bạn nên tranh thủ đi sớm để có thể tham quan
+               vịnh trọn vẹn hơn.</p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-10.jpg" alt="Du thuyền">
+            <p style="color:#eb0000b0;font-weight:bold">Du thuyền tham quan vịnh Hạ Long.</p>
+        </div>
+        <p>Hiện tại ở Tuần Châu có bán vé tham quan vịnh Hạ Long với 2 tuyến:</p>
+        <p>- Tuyến 1: đi 3 tiếng, du khách sẽ được tham quan hòn Chó Đá, hòn Đỉnh Hương, hòn Trống Mái, động Thiên Cung, hang Đầu Gỗ.</p>
+        <p>- Tuyến 2: đi 5 tiếng, du khách tham quan hòn Chó Đá, hòn Đỉnh Hương, làng chài Ba Hang, hòn Trống Mái, hang Sửng Sốt, đảo Ti Tốp, động Mê Cung, hang Luồn.</p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-11.jpg" alt="ảnh 1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-14.jpg" alt="ảnh 2">
+            <p style="color:#eb0000b0;font-weight:bold">Không quên sống ảo trên du thuyền.</p>
+        </div>
+        <p style="color: rgb(173, 150, 16)">* Lưu ý:</p>
+        <p>+ Nếu muốn tắm biển, bạn có thể chọn tuyến 2 vì có ghé đảo Ti Tốp, còn nếu không tắm biển thì tuyến 1 là sự 
+            lựa chọn tốt nhất. Bạn Bùi Ly chọn tuyến 1 với giá 350.000Đ/người và đi ghép với nhiều du khách khác nữa. Ở
+             đây, có rất nhiều người mời chào, họ đưa ra mức giá chung là 400.000Đ (và dĩ nhiên, bạn có thể mặc cả giống
+              như bạn Bùi Ly để có giá tốt nhất).</p>
+        <p>+ Muốn tiết kiệm chi phí, bạn nên chuẩn bị đồ ăn nhẹ trước khi lên thuyền, vì thực đơn trên thuyền cũng không
+             phong phú lắm mà giá lại mắc vô cùng, khoảng 200.000Đ/suất.</p>
+        <p>Buổi chiều dự định sẽ check-in núi Bài Thơ nhưng vì trục trặc kỹ thuật từ chiếc xe Nouvo đời cũ mèm mà kế hoạch
+             bị vỡ. Tối về khách sạn, chợ đêm Hạ Long là sự lựa chọn tốt nhất, ở đây khá đông du khách lại còn có nhiều quầy ăn uống và toàn những món ăn ngon.</p>
+        <h4>Ngày 4: Thư thả dạo chơi Hạ Long</h4>
+        <p>Quyết định không thuê xe máy, bạn Bùi Ly chọn cách ngắm biển Hạ Long sáng sớm, dạo chơi loanh quanh khách sạn rồi
+             về nghỉ ngơi. Buổi chiều, Bùi Ly lại ra khu công viên Rồng của Sun World tham quan, vì lần trước chưa đi chỗ này.
+              Tưởng giá vé là 350.000Đ/người, nhưng may mắn sao hôm đó được giảm giá chỉ còn 50.000Đ. Nghe đâu giá này sẽ được
+               áp dụng đến hết ngày 31/01/2019, nên bạn nào có đi Hạ Long nhớ tranh thủ nhé!</p>
+        <div class="img-1">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-31.jpg" alt="ảnh">
+            <img src="https://www.vietnambooking.com/wp-content/uploads/2019/01/dulich-halong-5n4d-chi-1900k-chuyen-kho-tin-nhung-co-that-16012019-32.jpg" alt="ảnh">
+            <p style="color:#eb0000b0;font-weight:bold">Dạo chơi khu vực công viên Rồng.</p>
+        </div>
+        <h4>Ngày 5: Chia tay phố cảng Hạ Long</h4>
+        <p>Một buổi sáng cà phê, ngắm cảnh Hạ Long, thư giãn đầu óc, hít thở không khí trong lành ngày cuối cùng ở Hạ Long là
+             tuyệt vời nhất. Đến trưa, Bùi Ly trả phòng khách sạn, ăn trưa và lên xe về lại Hà Nội.</p>
+        <h3>Tổng kết chuyến đi Hạ Long 5 ngày 4 đêm:</h3>
+        <p>- Xe khách Hà Nội - Hạ Long 130.000Đ x 2 chiều = 260.000Đ</p>
+        <p>- Vé Cáp treo nữ hoàng: 350.000Đ/người</p>
+        <p>- Vé Công viên Rồng: 50.000Đ/người</p>
+        <p>- Vé tham quan Vịnh Hạ Long: 350.000Đ/người</p>
+        <p>- Khách sạn: 220.000Đ x 4 đêm = 880.000Đ, chia 2 người 440.000Đ/người</p>
+        <p>- Xe máy: 150.000 x 2,5 ngày= 380.000Đ, cộng 100.000Đ xăng = 480.000Đ chia 2 là 240.000Đ/người</p>
+        <p>Cộng thêm chi phí ăn uống hết sức bình dân của bạn Bùi Ly khoảng 1.900.000Đ/người. Một chuyến đi Hạ Long
+             vô cùng tiết kiệm nhưng cũng không kém vui. Liên hệ với Travel-love để được tư vấn các tour du xuân
+              vịnh Hạ Long giá tiết kiệm, tổng đài 1900 1001 sẽ hỗ trợ du khách đặt tour nhanh và tiện lợi.</p>
+        <p style="text-align: right">1052 lượt xem | Phúc Minh</p>
+        
+    </div>
+    <footer class="ftc">
+        <div class="ftc-1">
+            <p>Liên hệ để được hỗ trợ : <b>19001001</b></p>
+            <p>Hoặc có thể liên hệ qua email : <i>bomdoan198@gmail.com</i></p>
+        </div>
+        <button class="but">
+            <input type="email" name="@" placeholder="Nhập email của bạn">
+        </button>
+        <div class="share">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram-square"></i>
+            <i class="fa-brands fa-github"></i>
+        </div>
+    </footer>
+    <script>
+        let formLogin = `<div id="login">
+<form action="" id="form-login">
+    <h1 class="form-head">Đăng Nhập</h1>
+    <div class="login-1">
+        <i class="fa-solid fa-user"></i>
+        <input type="email" class="eml" placeholder="Tên đăng nhập">
+    </div>
+    <div class="login-1">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" class="eml" placeholder="Mật khẩu">
+        <div id="eye">
+            <i class="fa-solid fa-eye"></i>
+        </div>
+    </div>
+    <input type="submit" value="Đăng Nhập" class="form-submit">
+    <a href="#" class="signup">Hoặc có thể</a>
+    <button type="" class="icon">
+        <i class="fa-brands fa-facebook"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-google"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-twitter"></i>
+    </button>
+</form>
+</div>`
+
+        let formSignup = `<div id="signup">
+<form action="" id="form-signup">
+    <h1 class="form-head">Đăng Ký</h1>
+    <div class="login-1">
+        <i class="fa-solid fa-user"></i>
+        <input type="email" class="eml" placeholder="Tên đăng nhập">
+    </div>
+    <div class="login-1">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" class="eml" placeholder="Mật khẩu">
+        <div id="eye">
+            <i class="fa-solid fa-eye"></i>
+        </div>
+    </div>
+    <div class="login-1">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" class="eml" placeholder="Nhập lại mật khẩu">
+        <div id="eye">
+            <i class="fa-solid fa-eye"></i>
+        </div>
+    </div>
+    <input type="submit" value="Đăng ký" class="form-submit">
+    <a href="#" class="signup">Hoặc có thể</a>
+    <button type="" class="icon">
+        <i class="fa-brands fa-facebook"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-google"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-twitter"></i>
+    </button>
+</form>
+</div>`
+        let loginBtn = document.getElementById('loginBtn')
+        let signupForm = document.getElementById('signupForm')
+        let modalContent = document.getElementById('modal-content')
+        let myModal = document.getElementById('myModal')
+        loginBtn.onclick = function () {
+            myModal.style.display = "block";
+            modalContent.innerHTML = formLogin
+
+        }
+        window.onclick = function (event) {
+            if (event.target == myModal) {
+                myModal.style.display = "none";
+            }
+        }
+        // đây là phần Signup
+        signupForm.onclick = function () {
+            myModal.style.display = "block";
+            modalContent.innerHTML = formSignup
+
+        }
+        window.onclick = function (event) {
+            if (event.target == myModal) {
+                myModal.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: sans-serif "roboto";
+            font-size: 24px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            color: #fff;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Modal Content */
+        .modal-content {
+            margin: auto;
+            padding: 0px;
+            border: 1px solid #888;
+            width: 25%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #signup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #form-signup {
+            background: rgba(17, 50, 42, 0.627);
+            max-width: 400px;
+            flex-grow: 1;
+            padding: 30px 30px 40px 30px;
+            border: 1px solid rgba(255, 0, 0, 0.8);
+            border-radius: 8px;
+        }
+
+        #eye-1 {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 0;
+            padding-right: 0;
+            margin-right: 18px;
+            cursor: pointer;
+        }
+
+        #login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #form-login {
+            background: rgba(17, 50, 42, 0.627);
+            max-width: 400px;
+            flex-grow: 1;
+            padding: 30px 30px 40px 30px;
+            border: 1px solid rgba(255, 0, 0, 0.8);
+            border-radius: 8px;
+        }
+
+        .form-head {
+            text-align: center;
+            margin: 24px;
+            color: #16a085;
+        }
+
+        .login-1 {
+            margin: 14px 0px 18px;
+            border-bottom: 1px solid #fff;
+            display: flex;
+        }
+
+        .login-1 i {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        #eye {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 0;
+            padding-right: 0;
+            margin-right: 18px;
+            cursor: pointer;
+        }
+
+        .eml {
+            background: transparent;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            flex-grow: 2;
+        }
+
+        .form-submit {
+            background: transparent;
+            width: 100%;
+            margin: 24px 0px 24px 0px;
+            border: 1px solid #fff;
+            padding: 10px 0px 10px;
+            color: #fff;
+        }
+
+        .signup {
+            font-size: 18px;
+            text-decoration: none;
+            margin-right: 24px;
+            color: #3498db;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0px 10px 0px 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 1px solid #c1c1c1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+        }
+
+        .logo a img {
+            width: 220px;
+            height: 50px;
+        }
+
+        .menu-sub {
+            display: flex;
+            justify-content: flex-end;
+            width: 800px;
+            flex-direction: row;
+        }
+
+        .menu-1 {
+            margin: 0 32px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .sg-lg {
+            background-color: #7cd5d5;
+        }
+
+        .sg-lg:hover {
+            background-color: #ffcdcd;
+        }
+
+
+        .but:hover {
+            background-color: #7cd5d5;
+        }
+
+
+        .head {
+            display: flex;
+            justify-content: center;
+            color: #eb2f06;
+            margin: 80px 0px 100px 0px;
+        }
+
+        .img-0 img {
+            height: 50vh;
+            width: 100%;
+        }
+
+        .content {
+            margin: 0px 200px 50px 200px;
+            padding: 0px 100px;
+        }
+
+        .item {
+            color: #079992;
+        }
+
+        .uli-1 {
+           
+           color: #000;
+        }
+
+        .img-1 img {
+            width: 900px;
+            height: 660px;
+        }
+
+        .ftc {
+            background-image: linear-gradient(80deg, #9C27B0, #ff8c8c);
+            width: 100%;
+            height: 20vh;
+        }
+
+        .share {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 24px;
+            position: relative;
+            top: 30px;
+            cursor: pointer;
+        }
+
+        .ftc-1 {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+
+        .but {
+            margin: 30px 0px 0px 230px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div id="modal-content" class="modal-content">
+            <span class="close">&times;</span>
+        </div>
+
+    </div>
+    <header class="container">
+        <div class="logo">
+            <a href="./index.html">
+                <img src="./img/logo1.png" alt="#logo">
+            </a>
+        </div>
+        <div>
+            <nav class="menu">
+                <ul class="menu-sub">
+                    <li class="menu-1">
+                        <a href="#">Blog</a>
+
+                    </li>
+                    <li class="menu-1"><a href="#">Review</a></li>
+                    <li class="menu-1"><a href="https://www.ivivu.com/">Booking</a></li>
+                    <li id="signupForm" class="sg-lg menu-1">Signup</li>
+                    <li id="loginBtn" class="sg-lg menu-1">Login</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="animation">
+        <div class="img-0">
+            <img src="https://upanh123.com/wp-content/uploads/2020/10/anh-dep-da-lat06-1024x683.jpg"
+                alt="">
+        </div>
+    </div>
+    <h1 class="head">Review Đà Lạt Mới Nhất</h1>
+    <div class="content">
+        <p>Dù đã đi du lịch Đà Lạt tận những 4 lần chỉ trong vài năm ngắn ngủi, nhưng mình vẫn thấy Đà Lạt là sự lựa chọn tuyệt vời cho những ai muốn trốn tránh cái nóng oi bức của mùa hè. Cảm giác được thăm thú, vãn cảnh và đắm chìm trong vẻ đẹp của thiên nhiên, quả thật là trải nghiệm không thể diễn tả bằng lời. Những kinh nghiệm và hướng dẫn du lịch Đà Lạt 2022 sau đây sẽ giúp bạn tận hưởng chuyến đi “ngon, bổ, rẻ”. </p>
+        <img src="https://bigdata-vn.com/wp-content/uploads/2021/10/Hinh-anh-Da-Lat-dep-mong-mo-va-lang-man.jpg" alt="">
+         <p>Để mình nói sơ cho bạn biết Đà Lạt có gì nhé! Là ngọn núi Langbiang huyền thoại, thu hút nhiều bạn phượt trẻ tuổi, là hồ Tuyền Lâm thơ mộng làm bao tâm hồn thổn thức, là thung lũng tình yêu điểm hẹn của đôi bạn trẻ, thác Voi – con thác huyền bí giữa núi rừng. Và cả một “gia tài” về những điểm đến, mà mình đã chắt chiu qua những chuyến đi, và có cả tìm hiểu. Đến Đà Lạt, không cần phải vội, chỉ cần dạo bước trên những con đường, cũng đủ thấy yên bình, chỉ muốn ở lại mãi.</p>   
+        <br>
+        <p>Có lẽ vì thiên nhiên Đà Lạt quá đẹp, mà người ta đã đặt cho thành phố này biết bao nhiêu là cái tên mỹ miều. Là thành phố sương mù cũng đúng, mà thành phố ngàn hoa cũng chẳng sai, rồi thành phố đáng sống nhất Việt Nam. Và cứ mỗi lần nhắc đến Đà Lạt, là chỉ thấy những cái hay, cái đẹp, là nơi nghỉ dưỡng lý tưởng mà điểm phượt cũng hợp lý nữa.</p> <br> <br>
+        <h2 class="item">Du Lịch Đà Lạt Bạn Nên Đi Thời Điểm Nào Là Lý Tưởng?</h2> <br>
+        <p>Với Kinh nghiệm du lịch Đà Lạt thì theo mình cảm nhận Đà Lạt không giống như các thành phố khác khi du lịch chỉ mang tính thời vụ. Riêng Đà Lạt, bạn có thể đến quanh năm bởi mỗi mùa lại có nét đẹp riêng của nó, thời tiết ôn hòa ít nắng gió hay mưa bão. Bạn có thể thoải mái lựa chọn thời điểm phù hợp nhất cho chuyến đi Đà Lạt của mình.</p> <br>
+        <div class="img-1">
+            <img src="https://dalattrongtoi.com/media/upload/images/bai-viet/lang%20binh%20an.jpg"
+                alt=" ">
+        </div>
+        <h3 class="item">+ Du lịch Đà Lạt từ tháng 11 đến hết tháng 6 </h3> <br>
+        <p>Là thời điểm mùa khô ở Đà Lạt, giai đoạn này được xem là thời điểm đẹp nhất để đi du lịch Đà Lạt. Thời tiết những tháng này khá đẹp, bầu trời luôn hửng nắng mỗi ngày, cũng có rất nhiều hoa quả để thưởng thức và selfie cũng đẹp hơn nữa. Tuy nhiên tháng nào hay mùa nào Đà Lạt cũng có một nét đẹp riêng của nó. Mình sẽ nêu ra những cái đẹp theo từng mùa cho mọi người chọn lựa nhé.</p> <br>
+        <img src="https://c0.wallpaperflare.com/preview/353/981/75/vietnam-thanh-ph%E1%BB%91-%C4%91a-l%E1%BA%A1t-unnamed-road-liandroy.jpg" alt=""> <br>
+        <h3 class="item">+ Du lịch Đà Lạt từ cuối tháng 10 đến cuối tháng 11</h3> <br>
+        <p>Những tháng này người ta vẫn hay gọi thời điểm này là “LẬP ĐÔNG”. Mình thấy lúc này Đà Lạt cũng rất đẹp. Đây là lúc tiết trời Đà Lạt chuyển từ Thu sang Đông, cái se se lạnh đã chớm bắt đầu, sáng sớm và chiều tối sương mờ giăng lối. Mùa này là mùa của những trái hồng chín mọng, mùa của những bông hoa dã quỳ bắt đầu nhuộm vàng kín lối trên mọi nẻo đường và là lúc hoa cải trắng bắt đầu nở rộ. Đẹp một cách kinh khủng.</p> <br>
+        <div class="img-1">
+            <img src="https://phuotvivu.com/blog/wp-content/uploads/2021/12/thang-5-da-lat-co-lanh-khong-01.jpg" alt="hihi"> 
+        </div>
+        <p>NOTE: Thời gian này mình khuyên các bạn FA không nên đến nhé vì sẽ cảm giác cô đơn lắm. Đi đâu cũng thấy các cặp đôi nắm tay nhau tung tăng chụp hình yêu thương “ Nhìn thấy mà chạnh lòng “. Mùa lạnh về, cũng là lúc những cặp đôi của chúng ta nên thực hiện một chuyến du lịch Đà Lạt cùng nhau để lưu giữ kỷ niệm. </p> <br> <br>
+        <h3 class="item">+ Du lịch Đà Lạt từ nửa cuối tháng 11 đến giữa tháng 1. </h3> <br>
+        <p>Là lúc Đà Lạt chính thức vào đông. Lúc này trời khá lạnh và thường lạnh đỉnh điểm vào những ngày gần Noel. Trời mùa này ở Đà Lạt thỉnh thoảng có mưa đêm và sương mù. Thời điểm này cũng rất được nhiều người yêu thích vẻ đẹp “Đà Lạt hoàng hôn”. Mùa này nhất định phải đem theo áo lạnh và khăn quàng cổ cả nhà nhé. Đặc trưng của mùa này chính là tiết trời lạnh, sương mù và những cánh đồng hoa cỏ tuyết. Lúc này Đà Lạt và Sapa chẳng khác là mấy vì cái LẠNH TÊ BUỐT như nhau.</p> <br>
+        
+        <img src="https://c0.wallpaperflare.com/preview/920/412/879/white-and-gray-house-near-body-of-water.jpg" alt=""> <br>
+        <h3 class="item">+ Du lịch Đà Lạt từ tháng 3 đến hết tháng 6.</h3> <br>
+        <p>Đây là lúc Đà Lạt bước vào hè, tiết trời nắng có khi gắt vào buổi trưa. Nhưng cái hay của Đà Lạt là dù ban ngày trời có nóng mấy thì buổi tối bạn vẫn phải mặc áo ấm đi ra đường. Đây là những điều mà mình đã trực tiếp trải nghiệm, 4 lần đến đều là 4 mùa khác nhau. Mình mong rằng bài viết này sẽ là cuốn cẩm nang về kinh nghiệm du lịch Đà Lạt đầy đủ và chi tiết nhất. Là những thông tin hữu ích gửi đến những bạn đang có dự định đi Đà Lạt trong năm nay.</p> <br>
+        <img src="https://c0.wallpaperflare.com/preview/586/592/9/vietnam-thanh-ph%E1%BB%91-%C4%91a-l%E1%BA%A1t-ankroet-waterfall-dalat-vietnam-river.jpg" alt=""> <br> <br>
+        
+        <h2 class="item">Cần Chuẩn Bị Những Gì Khi Đi du Lịch Đà lạt?</h2> <br>
+        <p>Chuyến đi Đà Lạt là điều bạn mong đợi bấy lâu nay. Giờ đây, khi giấc mơ ấy đã trở thành hiện thực thì hãy nhớ lên một kế hoạch thật chi tiết, rõ ràng. Quan trọng là cần chuẩn bị một số món cần thiết để chuyến đi trở nên trọn vẹn hơn.</p> <br>
+        <p>CÁC LOẠI GIẤY TỜ CẦN THIẾT: CMND, bằng lái xe, các loại vé tàu/ vé máy bay. CMND + Bằng lái xe để sử dụng cho việc thuê khách sạn, thuê xe máy, còn đối với các loại vé, nếu sợ mất bạn có thể dùng vé điện tử. Đến nơi thì nhờ nhân viên in giúp.</p> <br>
+        <ul class="uli-1">
+            <li><strong>* Tiền bạn và thẻ ATM:</strong> Ở Đà Lạt khá phổ biến các điểm rút tiền tự động, nên ngoài những chi phí như xe ôm, ăn uống dọc đường cần dùng đến tiền mặt, bạn nên mang theo thẻ ATM cho tiện. Khi cần dùng đến, chỉ nên rút một khoản vừa đủ, không nên để tiền mặt quá nhiều trong người.</li> 
+            <li><strong>* Trang phục:</strong> Nhiệt độ Đà Lạt trung bình dao động từ 16-18 độ C. Đó là lý do mà khi đi du lịch Đà Lạt, bạn nên chọn cho mình những bộ đồ đủ ấm hoặc áo dài tay. Hơn nữa, trang phục mùa đông rất hợp với khung cảnh lãng mạn, se lạnh nơi cao nguyên Đà Lạt.</li>
+            <li><strong>* Các phụ kiện đi kèm:</strong> Địa hình Đà Lạt chủ yếu là những đoạn đường dốc, đồi núi, những con dường gồ ghề. Vậy nên thay vì giày cao gót, hãy mang theo những đôi giày thể thao hoặc sandal để vừa hợp thời mà lại giúp êm chân hơn khi di chuyển. Bên cạnh đó, nhớ mang theo mũ lên, kính râm, kem chống nắng.</li>
+            <li><strong>* Đồ dùng cá nhân:</strong> Hầu như ở các khách sạn Đà Lạt đều chuẩn bị khăn lâu, dầu gội, sữa tắm,vv… Nhưng nếu bạn ngại dùng đồ bên ngoài, hãy mang theo đồ cá nhân của mình để sử dụng cho an tâm. Tốt nhất, bạn nên bỏ chúng trong một cái bọc, để khi cần đến thì có thể thấy ngay. Nhớ cầm theo điện thoại, sạc pin rất quan trọng.</li>
+            <li><strong>* Các loại thuốc:</strong> Nếu cảm thấy sức khỏe yếu, bạn nên mang theo một số loại thuốc như thuốc chống say xe, thuốc đau đầu, thuốc đau bụng. Ngoài ra, nên mang theo một lọ bôi chống côn trùng cắn.</li>
+           
+        </ul> <br>
+        <img src="https://c0.wallpaperflare.com/preview/275/946/358/empty-road.jpg" alt="">
+        <h2 class="item">Đi Du Lịch Đà Lạt Tự Túc Hết Bao Nhiêu Tiền ?</h2> <br>
+        <p>Mình xin gợi ý cho mọi người tính toán chi phí cho chuyến đi du lịch Đà Lạt như sau. Từ đó, giúp bạn lên kế hoạch cho chuyến đi tốt nhất của mình và tính toán được rằng đi du lịch Đà Lạt tự túc hết bao nhiêu tiền?</p> <br>
+        <ul class="uli-1">
+            <li><strong>* Đi du lịch Đà Lạt từ Hà Nội:</strong>Có lẽ nếu bạn xuất phát từ Hà Nội chi phí sẽ cao hơn so với các tỉnh phía Nam vì khoảng cách khá xa. Vé máy bay các bạn nên đặt trước ít nhất nửa tháng để săn vé rẻ. Kinh nghiệm du lịch Đà Lạt tự túc của mình thì giá vé chiều đi từ Hà Nội đến Đà Lạt khá rẻ so với chiều ngược lại từ Đà Lạt ra Hà Nội. Chiều đi khoảng 800k và chiều về khoảng 1.000.000vnđ – 1.200.000vnđ nhé. Còn đi xe khách thì giá 2 chiều như nhau khoảng 500.000vnđ – 600.000vnđ/1 chiều.</li> 
+            <li><strong>* Đi du lịch Đà Lạt từ Sài Gòn:</strong> Khoảng cách từ Hồ Chí Minh đến Đà Lạt chỉ 300km nên bạn nên di chuyển bằng ô tô giường nằm nhé. Rất tiện khi bến xe nằm ngay trung tâm thành phố, tới Đà Lạt là có xe trung chuyển tận nơi đến khách sạn. Vậy là đi Đà Lạt từ Sài Gòn là rẻ nhất khi chọn phương tiện di chuyển.</li>
+            <li><strong>* Chi phí Ăn Uống và Khách Sạn:</strong>Bạn chọn Khách Sạn khoảng 1 – 2 sao ở Đà Lạt giá cũng chỉ khoảng 200k – 350k thôi nhé. Về phương tiện di chuyển trong thành phố bạn cứ thuê cho mình 1 chiếc xe máy 100k/1 ngày để đi lại cho rẻ. Hoặc bạn book GRAP ô tô đi lại những điểm xung quanh nếu bạn không muốn tự tìm đường.</li>
+           
+        </ul> <br>
+        <img src="https://c0.wallpaperflare.com/preview/915/173/306/vietnam-thanh-ph%E1%BB%91-%C4%91a-l%E1%BA%A1t-9-tri%E1%BB%87u-vi%E1%BB%87t-v%C6%B0%C6%A1ng.jpg" alt=""> <br> <br>
+        <p>Bạn hãy chuẩn bị thật đầy pin máy ảnh, trang phục thật tươm tất xinh đẹp để không bỏ lỡ những “shoot”
+            hình khi đến những địa điểm dưới này của Đà Lạt nhé!</p>
+        <ul class="uli-1">
+            <li>* Chợ Đêm Đà Lạt – Khu Ẩm Thực Đêm cuốn hút</li>
+            <li>* Thung Lũng Tình Yêu – Nơi thổ lộ tình yêu lãng mạn nhất</li>
+            <li>* Ngôi Làng Đất Sét – Điểm du lịch Đà Lạt được yêu thích</li>
+            <li>* Ga Đà Lạt – Ga Cổ và Đẹp mê người ở Đà Lạt</li>
+            <li>* Tiệm Bánh Cối Xay Gió – Điểm check in độc đáo khi đến Đà Lạt</li>
+            <li>* Vườn Hoa Thành Phố – Nơi rực rỡ nhất Đà Lạt</li>
+            <li>* Quảng Trường Lâm Viên – Nơi vui chơi thú vị tại Đà Lạt</li>
+            <li>* Nhà Thờ Con Gà – Nhà thờ lớn nhất Đà Lạt</li>
+            <li>* Trường Cao Đẳng Sư Phạm – Ngôi trường có nhiều nét độc đáo</li>
+        </ul> <br>
+        <p>Trên đây là một số thông tin review du lịch Đà Lạt chi tiết nhất dành cho những ai đang có ý định lên thăm
+            vùng núi xinh tươi này. Đà Lạt hứa hẹn sẽ mang lại cho bạn những trải nghiệm cực kì đáng nhớ và tuyệt với
+            đấy.</p>
+    </div>
+    <footer class="ftc">
+        <div class="ftc-1">
+            <p>Liên hệ để được hỗ trợ : <b>19001001</b></p>
+            <p>Hoặc có thể liên hệ qua email : <i>bomdoan198@gmail.com</i></p>
+        </div>
+        <button class="but">
+            <input type="email" name="@" placeholder="Nhập email của bạn">
+        </button>
+        <div class="share">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram-square"></i>
+            <i class="fa-brands fa-github"></i>
+        </div>
+    </footer>
+    <script>
+        let formLogin = `<div id="login">
+<form action="" id="form-login">
+    <h1 class="form-head">Đăng Nhập</h1>
+    <div class="login-1">
+        <i class="fa-solid fa-user"></i>
+        <input type="email" class="eml" placeholder="Tên đăng nhập">
+    </div>
+    <div class="login-1">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" class="eml" placeholder="Mật khẩu">
+        <div id="eye">
+            <i class="fa-solid fa-eye"></i>
+        </div>
+    </div>
+    <input type="submit" value="Đăng Nhập" class="form-submit">
+    <a href="#" class="signup">Hoặc có thể</a>
+    <button type="" class="icon">
+        <i class="fa-brands fa-facebook"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-google"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-twitter"></i>
+    </button>
+</form>
+</div>`
+
+        let formSignup = `<div id="signup">
+<form action="" id="form-signup">
+    <h1 class="form-head">Đăng Ký</h1>
+    <div class="login-1">
+        <i class="fa-solid fa-user"></i>
+        <input type="email" class="eml" placeholder="Tên đăng nhập">
+    </div>
+    <div class="login-1">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" class="eml" placeholder="Mật khẩu">
+        <div id="eye">
+            <i class="fa-solid fa-eye"></i>
+        </div>
+    </div>
+    <div class="login-1">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" class="eml" placeholder="Nhập lại mật khẩu">
+        <div id="eye">
+            <i class="fa-solid fa-eye"></i>
+        </div>
+    </div>
+    <input type="submit" value="Đăng ký" class="form-submit">
+    <a href="#" class="signup">Hoặc có thể</a>
+    <button type="" class="icon">
+        <i class="fa-brands fa-facebook"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-google"></i>
+    </button>
+    <button class="icon">
+        <i class="fa-brands fa-twitter"></i>
+    </button>
+</form>
+</div>`
+        let loginBtn = document.getElementById('loginBtn')
+        let signupForm = document.getElementById('signupForm')
+        let modalContent = document.getElementById('modal-content')
+        let myModal = document.getElementById('myModal')
+        loginBtn.onclick = function () {
+            myModal.style.display = "block";
+            modalContent.innerHTML = formLogin
+
+        }
+        window.onclick = function (event) {
+            if (event.target == myModal) {
+                myModal.style.display = "none";
+            }
+        }
+        // đây là phần Signup
+        signupForm.onclick = function () {
+            myModal.style.display = "block";
+            modalContent.innerHTML = formSignup
+
+        }
+        window.onclick = function (event) {
+            if (event.target == myModal) {
+                myModal.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
