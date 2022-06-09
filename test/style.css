@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 header {
     z-index: 1;
 }
@@ -158,7 +159,7 @@ ul {
 }
 
 .container {
-    
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -172,30 +173,6 @@ ul {
 }
 
 
-#banner {
-    position: relative;
-    margin-top: 46px;
-    padding-top: 50%;
-    background: url('/test/img/hinh-anh-di-phuot-xuyen-quoc-gia.jpg')  top center/ cover no-repeat;
-}
-
-#banner .text-content {
-    position: absolute;
-    bottom: 400px;
-    color: #fff;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-#banner .text-heading {
-    font-weight: 500;
-    font-size: 35px;
-  
-}
-#banner .text-description {
-    font-size: 15px;
-    margin-top: 8px;
-}
 .logo a img {
     width: 220px;
     height: 50px;
@@ -229,7 +206,7 @@ ul {
     margin-left: 72px;
     height: 40px;
     padding: 0px;
-    border: 1px solid #333;
+    border: 0px solid #333;
     border-radius: 4px;
 }
 
@@ -242,7 +219,7 @@ ul {
     position: absolute;
 }
 
- .but {
+.but {
     background-color: #fff;
     width: 30px;
     height: 30px;
@@ -262,7 +239,8 @@ ul {
     font-weight: 100;
     background: radial-gradient(#a23982, #1f1013);
     -webkit-overflow-Y: hidden;
-    -moz-overflow-Y: hidden -o-overflow-Y: hidden;
+    -moz-overflow-Y: hidden; 
+    -o-overflow-Y: hidden; 
     overflow-y: hidden;
     -webkit-animation: fadeIn 1 1s ease-out;
     -moz-animation: fadeIn 1 1s ease-out;
@@ -903,7 +881,7 @@ ul {
 
 .nineth {
     background-image: url('https://www.limo24h.vn/wp-content/uploads/2020/02/vi-sao-nen-du-lich-phu-quoc.jpg');
-} 
+}
 
 footer {
     background-image: linear-gradient(80deg, #9C27B0, #ff8c8c);
@@ -934,4 +912,3 @@ footer .frame_l .company_name {
 .email {
     cursor: pointer;
 }
-
